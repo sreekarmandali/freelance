@@ -1,0 +1,87 @@
+<div class="content">
+  <div class="parent"></div>
+  <div class="row heading mb-2">
+    <img src="../../../../assets/images/Clara_heading.png" alt="Clara" />
+  </div>
+  <div class="row heading mb-4">
+    <div class="col-2"></div>
+    <div class="col-8 message">
+      <span class="row justify-content-center"
+        >Discover the perfect products
+      </span>
+      <span class="row justify-content-center"
+        >for you and for your needs.</span
+      >
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="loginCard col-12">
+        <form
+          class="formClass container pt-4"
+          [formGroup]="loginform"
+          (ngSubmit)="loginsubmit()"
+        >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Number or Email</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              id="exampleInputEmail1"
+              formControlName="nameoremail"
+              aria-describedby="emailHelp"
+              placeholder="Enter your number or email"
+            />
+            <span
+              class="text-danger"
+              *ngIf="
+                (f.nameoremail.touched || submitted) &&
+                f.nameoremail.errors?.required
+              "
+            >
+              Name or Email is required
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control form-control-sm rounded-right"
+                id="exampleInputPassword1"
+                formControlName="password"
+                placeholder="Enter your password"
+              />
+              <span class="icon-inside"
+                ><fa-icon [icon]="faEye" class="icon"></fa-icon
+              ></span>
+            </div>
+            <span
+              class="text-danger"
+              *ngIf="
+                (f.password.touched || submitted) && f.password.errors?.required
+              "
+            >
+              Password is required
+            </span>
+          </div>
+          <div class="col-12 text-center">
+            <span class="forgot">Forgot Password? </span>
+          </div>
+          <div class="col-12 text-center mt-3">
+            <button type="submit" class="btn">Sign In</button>
+          </div>
+          <div class="col-12 text-center mt-3">
+            <span class="guest"><u>Continue as a Guest</u> </span>
+          </div>
+          <div class="col-12 text-center mt-3 mb-4">
+            <span class="display-inline register">Not Registerd yet?</span
+            ><span class="display-inline signup">SignUp</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
