@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,30 +10,39 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   faEye = faEyeSlash;
-  loginform: FormGroup
-  submitted = false
-   
-  get f(){
-      return this.loginform.controls;
+  loginform: FormGroup;
+  submitted = false;
+
+  get f() {
+    return this.loginform.controls;
   }
 
   constructor() {}
 
   ngOnInit(): void {
-    this.loginform  = new FormGroup({
-      nameoremail: new FormControl(undefined, [Validators.required]),
-      password: new FormControl(undefined, [Validators.required]),
+    this.loginform = new FormGroup({
+      numberoremail: new FormControl('', [
+        Validators.required,
+        validNumberOrEmail,
+      ]),
+      password: new FormControl('', [Validators.required]),
     });
-    // this.loginform.controls['nameoremail'].valueChanges.subscribe(value => {
-    //   this.submitted = false
-    // });
-    // this.loginform.controls['password'].valueChanges.subscribe(value => {
-    //   this.submitted = false
-    // });
   }
-  loginsubmit(){
-    this.submitted = true
+  loginsubmit() {
+    this.submitted = true;
     console.log(this.loginform.value);
   }
-  
+}
+
+function validNumberOrEmail(c: FormControl) {
+  let EMAIL_REGEXP =
+    /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+  return EMAIL_REGEXP.test(c.value) || !isNaN(c.value)
+    ? null
+    : {
+      validNumberOrEmail: {
+          valid: false,
+        },
+      };
 }

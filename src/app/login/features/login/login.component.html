@@ -19,58 +19,83 @@
     <div class="row">
       <div class="loginCard col-12">
         <form
-          class="formClass container pt-4"
+          class="container pt-4"
           [formGroup]="loginform"
           (ngSubmit)="loginsubmit()"
         >
           <div class="form-group">
-            <label for="exampleInputEmail1">Number or Email</label>
+            <span class="display-inline"
+              ><label for="input1">Number or Email</label>
+              <span
+                class="text-danger float-right"
+                *ngIf="submitted && f.numberoremail.errors?.required"
+              >
+                Enter Name or Email
+              </span>
+              <span
+                class="text-danger float-right"
+                *ngIf="
+                  f.numberoremail.touched &&
+                  submitted &&
+                  f.numberoremail.errors?.validNumberOrEmail
+                "
+              >
+                Enter a valid value
+              </span>
+            </span>
+
             <input
               type="text"
               class="form-control form-control-sm"
-              id="exampleInputEmail1"
-              formControlName="nameoremail"
+              id="input1"
+              formControlName="numberoremail"
               aria-describedby="emailHelp"
               placeholder="Enter your number or email"
+              [ngClass]="{
+                'invalid-input': submitted && f.numberoremail.invalid,
+                'input-touched':
+                  (f.numberoremail.dirty || f.numberoremail.touched) &&
+                  !f.numberoremail.invalid
+              }"
             />
-            <span
-              class="text-danger"
-              *ngIf="
-                (f.nameoremail.touched || submitted) &&
-                f.nameoremail.errors?.required
-              "
-            >
-              Name or Email is required
-            </span>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <span class="display-inline"
+              ><label for="exampleInputEmail1">Password</label>
+              <span
+                class="text-danger float-right"
+                *ngIf="submitted && f.password.errors?.required"
+              >
+                Enter Password
+              </span>
+            </span>
+
+            <label for="input2">Password</label>
 
             <div class="input-group">
               <input
                 type="password"
-                class="form-control form-control-sm rounded-right"
-                id="exampleInputPassword1"
+                class="form-control form-control-sm"
+                id="input2"
                 formControlName="password"
                 placeholder="Enter your password"
+                [ngClass]="{
+                  'invalid-input': submitted && f.password.invalid,
+                  'input-touched':
+                    (f.password.dirty || f.password.touched) &&
+                    !f.password.invalid
+                }"
               />
+
               <span class="icon-inside"
                 ><fa-icon [icon]="faEye" class="icon"></fa-icon
               ></span>
             </div>
-            <span
-              class="text-danger"
-              *ngIf="
-                (f.password.touched || submitted) && f.password.errors?.required
-              "
-            >
-              Password is required
-            </span>
           </div>
           <div class="col-12 text-center">
             <span class="forgot">Forgot Password? </span>
           </div>
-          <div class="col-12 text-center mt-3">
+          <div class="col-12 text-center mt-3 signButton">
             <button type="submit" class="btn">Sign In</button>
           </div>
           <div class="col-12 text-center mt-3">

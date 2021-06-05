@@ -1,24 +1,21 @@
 .content {
-  background-color: #F2ECDE;
+  background-color: #f2ecde;
 }
 .container {
   height: 30em;
 }
 .heading {
-    justify-content: center;
+  justify-content: center;
 }
-.message{
-    color: #050505;
-    font-size: 17px;
-    font-family: Circular Std;
+.message {
+  color: #050505;
+  font-size: 17px;
+  font-family: Circular Std;
 
-font-style: normal;
-font-weight:550;
-line-height: 25px;
-letter-spacing: 0px;
-
-
-
+  font-style: normal;
+  font-weight: 550;
+  line-height: 25px;
+  letter-spacing: 0px;
 }
 
 .parent {
@@ -32,23 +29,7 @@ letter-spacing: 0px;
   border-radius: 36px;
   background-color: white;
 }
-.formClass {
-  color: #050505;
-  font-family: Circular Std;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-input {
-  height: 45px !important;
 
-  border-radius: 12px;
-
-  border: 1px solid #050505;
-}
 .loginform {
   display: flex;
   align-content: center;
@@ -67,23 +48,20 @@ input {
 
 .forgot {
   color: #006d4e;
-  font-size: 13px;
+  font-size: 14px;
 }
 .guest {
   color: #ff9d80;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 20px;
 }
-.btn {
-  background-color: #c95d21;
-  width: 90%;
-  border-radius: 20px;
-  color: white;
-}
+
 .register {
-  font-size: 16px;
+  font-size: 18px;
   color: black;
+  line-height: 20px;
 }
 .signup {
-  font-size: 16px;
+  font-size: 18px;
   color: #006d4e;
 }
