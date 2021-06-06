@@ -8,7 +8,7 @@ import { TokenInterceptor } from './token.interceptor'
 import { ApiService } from './services/api.sevice'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ApiService],
   imports: [HttpClientModule, BrowserModule, AppRoutingModule, CommonModule
   ],
   providers: [{
