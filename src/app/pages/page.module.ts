@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LoginRoutingModule } from './login-routing.module';
+import { LoginRoutingModule } from './page-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { MatCardModule} from '@angular/material/card'
