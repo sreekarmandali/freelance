@@ -8,12 +8,9 @@ form {
   letter-spacing: 0em;
   text-align: left;
 }
-
 input {
   height: 60px !important;
-
   border-radius: 16px !important;
-
   border: 1px solid #05050526;
 }
 .form-control {
@@ -21,7 +18,6 @@ input {
   color: #05050566;
   border: 1px solid #05050526;
 }
-
 .input-group > input {
   border-top-right-radius: 12px !important;
   border-bottom-right-radius: 12px !important;
@@ -31,19 +27,17 @@ input {
   border: 1px solid black;
   opacity: 0% !important;
 }
-
 .signButton {
-  background-color: #c95d21;
+  background-color: #c95d21 !important;
   width: 90%;
-  color: white;
-}
-.btn {
-  border-radius: 20px;
+  color: white !important;
 }
 .invalid-input {
   border: 1px solid #f00 !important;
 }
-
+.btn {
+  border-radius: 20px !important;
+}
 .input-touched {
   border: 1px solid black !important;
   color: black;

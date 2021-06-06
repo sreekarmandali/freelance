@@ -19,7 +19,7 @@
 }
 
 .parent {
-  background-image: url("../../../../assets/images/homeback.png");
+  background-image: url("../../../assets/images/homeback.png");
   height: 16em;
   background-size: cover;
   background-repeat: no-repeat;

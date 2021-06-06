@@ -1,7 +1,7 @@
 <div class="content">
   <div class="parent"></div>
   <div class="row heading mb-2">
-    <img src="../../../../assets/images/Clara_heading.png" alt="Clara" />
+    <img src="../../../assets/images/Clara_heading.png" alt="Clara" />
   </div>
   <div class="row heading mb-4">
     <div class="col-2"></div>
@@ -49,7 +49,7 @@
               class="form-control form-control-sm"
               id="input1"
               formControlName="numberoremail"
-              aria-describedby="emailHelp"
+              aria-describedby="emailHelp" autocomplete="off"
               placeholder="Enter your number or email"
               [ngClass]="{
                 'invalid-input': submitted && f.numberoremail.invalid,
@@ -70,14 +70,14 @@
               </span>
             </span>
 
-            <label for="input2">Password</label>
+            
 
             <div class="input-group">
               <input
                 type="password"
                 class="form-control form-control-sm"
                 id="input2"
-                formControlName="password"
+                formControlName="password" autocomplete="off"
                 placeholder="Enter your password"
                 [ngClass]="{
                   'invalid-input': submitted && f.password.invalid,
@@ -95,15 +95,15 @@
           <div class="col-12 text-center">
             <span class="forgot">Forgot Password? </span>
           </div>
-          <div class="col-12 text-center mt-3 signButton">
-            <button type="submit" class="btn">Sign In</button>
+          <div class="col-12 text-center mt-3">
+            <button type="submit" class="signButton btn">Sign In</button>
           </div>
           <div class="col-12 text-center mt-3">
             <span class="guest"><u>Continue as a Guest</u> </span>
           </div>
           <div class="col-12 text-center mt-3 mb-4">
             <span class="display-inline register">Not Registerd yet?</span
-            ><span class="display-inline signup">SignUp</span>
+            ><span class="display-inline signup">&nbsp;SignUp</span>
           </div>
         </form>
       </div>
